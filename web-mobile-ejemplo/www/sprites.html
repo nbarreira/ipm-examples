@@ -1,0 +1,70 @@
+<html>
+
+    <head>
+        <title>CSS Sprites</title>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+        
+        <style>
+            body {
+               font-family: Verdana, serif;               
+            }
+            
+            .wrapper {
+                margin: 10px auto;   
+                width: 800px;
+            }
+            
+            ul {
+                list-style: none;
+            }
+            
+            ul li {
+                float: left;
+                padding: 10px;
+            }
+            
+            .icon {
+                background-image: url(i/social-header.png);
+                width: 48px;
+                height: 48px;
+            }
+            .twitter {
+                background-position:-240px -212px;                
+            }
+            .facebook {
+                background-position:-288px -48px;                
+            }
+            .linkedin {
+                background-position: 1px -158px;                
+            }            
+            
+            a {
+                display: block;
+                border: solid 1px gray;
+                border-radius: 5px;
+            }
+        </style>
+        
+        
+    </head>
+    
+    <body>
+        <div id="wrapper">
+        
+            <h1>Imagen sprite</h1>
+            <img src="i/social-header.png" alt="social icons" />
+            
+            <h1>Accediendo a una posición</h1>
+            
+            <ul>
+                <li><a href="#" class="icon twitter"> </a></li>
+                <li><a href="#" class="icon facebook"> </a></li>
+                <li><a href="#" class="icon linkedin"> </a></li>                
+            </ul>
+            
+        </div>    
+    </body>
+
+
+</html>
