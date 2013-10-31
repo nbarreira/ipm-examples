@@ -5,6 +5,7 @@ function init() {
 
 
 function get_data(e) {
+   e.preventDefault();
    var xmlhttp = new XMLHttpRequest();
    var num = 5;
    var offset = document.querySelectorAll("article").length;
@@ -17,10 +18,9 @@ function get_data(e) {
                 eventList = JSON.parse(xmlhttp.responseText);
                 if (eventList.count < num) {
                     document.querySelector("#more").style.display = "none";
-                } else {
-                    for(var i = 0; i < eventList.count; i++) {
-                        create_article(eventList.data[i]);
-                    }
+                } 
+                for(var i = 0; i < eventList.count; i++) {
+                    create_article(eventList.data[i]);
                 }
             break;
             case 404: // Error: 404 - Resource not found!
@@ -33,7 +33,6 @@ function get_data(e) {
 
    xmlhttp.open("GET","http://localhost:8080/cgi-bin/events.py?n=" + num + "&offset=" + offset, false);
    xmlhttp.send();
-
 }
 
 
