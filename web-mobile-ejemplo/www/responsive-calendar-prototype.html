@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <title>Responsive calendar</title>
+        <style type="text/css">
+            body {
+                font-family: Georgia, serif;
+            }
+            .calendar {
+                width: 100%;
+            }
+            .calendar ul {
+                list-style: none;            
+            }
+            .calendar ul li {
+                width: 14.285714%; /* 100% / 7 */
+                float: left;
+                padding: 0.5em;  
+                height: 10em;
+                box-sizing: border-box;
+                -moz-box-sizing:border-box; /* Firefox */
+                display: block;
+                border: solid 1px gray;
+                margin-left: -1px;
+                margin-top: -1px;
+            }
+            .calendar ul li.heading {
+                font-variant: small-caps;
+                height: auto;
+                text-align: center;
+            }
+            .calendar ul li span.dayName {
+                display: none;
+            }
+            .calendar ul li span.event {
+                border: solid 1px gray;
+                border-radius: 5px;
+                margin-top: 5px;
+                padding: 5px;
+                display: block;
+            }
+            .clearfix {
+                clear: both;
+            }
+            @media only screen and (max-width : 768px) { 
+                .calendar ul li.heading, .calendar ul li.empty { display: none; } 
+                .calendar ul li {
+                    height: auto!important;
+                    border: 1px solid gray;
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: -1px;
+                }
+                .calendar ul li span.dayName {
+                    display: inline;
+                    padding-right: 0.25em;
+                }
+                .calendar ul li span.event {
+                    border: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calendar">
+            <ul class="days">
+                <li class="heading">Sunday</li>
+                <li class="heading">Monday</li>
+                <li class="heading">Tuesday</li>
+                <li class="heading">Wednesday</li>
+                <li class="heading">Thursday</li>
+                <li class="heading">Friday</li>
+                <li class="heading">Saturday</li>
+                <li class="empty">
+                </li>
+                <li class="empty">
+                </li>
+                <li>
+                   <span class="dayName">Tue</span>
+                   <span class="day">1</span>
+                </li>
+                <li>
+                   <span class="dayName">Wed</span>
+                   <span class="day">2</span>
+                </li>
+                <li>
+                   <span class="dayName">Thu</span>
+                   <span class="day">3</span>
+                </li>
+                <li>
+                   <span class="dayName">Fri</span>
+                   <span class="day">4</span>
+                </li>
+                <li>
+                   <span class="dayName">Sat</span>
+                   <span class="day">5</span>
+                </li>
+                <li>
+                   <span class="dayName">Sun</span>
+                   <span class="day">6</span>
+                </li>
+                <li>
+                   <span class="dayName">Mon</span>
+                   <span class="day">7</span>
+                </li>
+                <li>
+                   <span class="dayName">Tue</span>
+                   <span class="day">8</span>
+                </li>
+                <li>
+                   <span class="dayName">Wed</span>
+                   <span class="day">9</span>
+                </li>
+                <li>
+                   <span class="dayName">Thu</span>
+                   <span class="day">10</span>
+                </li>
+                <li>
+                   <span class="dayName">Fri</span>
+                   <span class="day">11</span>
+                </li>
+                <li>
+                   <span class="dayName">Sat</span>
+                   <span class="day">12</span>
+                </li>
+                <li>
+                   <span class="dayName">Sun</span>
+                   <span class="day">13</span>
+                </li>
+                <li>
+                   <span class="dayName">Mon</span>
+                   <span class="day">14</span>
+                </li>
+                <li>
+                   <span class="dayName">Tue</span>
+                   <span class="day">15</span>
+                   <span class="event">Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                </li>
+                <li>
+                   <span class="dayName">Wed</span>
+                   <span class="day">16</span>
+                </li>
+                <li>
+                   <span class="dayName">Thu</span>
+                   <span class="day">17</span>
+                </li>
+                <li>
+                   <span class="dayName">Fri</span>
+                   <span class="day">18</span>
+                </li>
+                <li>
+                   <span class="dayName">Sat</span>
+                   <span class="day">19</span>
+                </li>
+                <li>
+                   <span class="dayName">Sun</span>
+                   <span class="day">20</span>
+                </li>
+                <li>
+                   <span class="dayName">Mon</span>
+                   <span class="day">21</span>
+                </li>
+                <li>
+                   <span class="dayName">Tue</span>
+                   <span class="day">22</span>
+                </li>
+                <li>
+                   <span class="dayName">Wed</span>
+                   <span class="day">23</span>
+                </li>
+                <li>
+                   <span class="dayName">Thu</span>
+                   <span class="day">24</span>
+                </li>
+                <li>
+                   <span class="dayName">Fri</span>
+                   <span class="day">25</span>
+                   <span class="event">Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                </li>
+                <li>
+                   <span class="dayName">Sat</span>
+                   <span class="day">26</span>
+                </li>
+                <li>
+                   <span class="dayName">Sun</span>
+                   <span class="day">27</span>
+                </li>
+                <li>
+                   <span class="dayName">Mon</span>
+                   <span class="day">28</span>
+                </li>
+                <li>
+                   <span class="dayName">Tue</span>
+                   <span class="day">29</span>
+                </li>
+                <li>
+                   <span class="dayName">Wed</span>
+                   <span class="day">30</span>
+                </li>
+                <li>
+                   <span class="dayName">Thu</span>
+                   <span class="day">31</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="clearfix">
+            Basado en <a href="http://www.searchdiscovery.com/blog/tutorial-creating-a-responsive-calendar/">Tutorial: Creating a responsive calendar
+</a> <br />
+            Otro ejemplo basado en tablas en <a href="http://dbushell.com/2012/01/04/responsive-calendar-demo/">Responsive tables (and a calendar demo)</a>
+        </div>
+    </body>
+</html>
