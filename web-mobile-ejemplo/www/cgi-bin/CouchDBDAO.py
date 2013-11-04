@@ -7,9 +7,10 @@ class CouchDBDAO():
         self._db = database
     
     def __view_to_list(self, view_result):
+        
         docs = []
         for row in view_result:
-            docs.append(row.value)        
+            docs.append({'id': row['id'], 'key': row['key'], 'value': row['value']})        
     
         return docs
 

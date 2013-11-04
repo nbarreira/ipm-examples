@@ -15,13 +15,14 @@ function get_data(e) {
       
         switch (xmlhttp.status) {
             case 200: // OK!
-                eventList = JSON.parse(xmlhttp.responseText);
-                if (eventList.count < num) {
+                response = JSON.parse(xmlhttp.responseText);
+                rows = response.rows;
+                if (rows.length < num) {
                     document.querySelector("#more").style.display = "none";
                 } 
-                for(var i = 0; i < eventList.count; i++) {
-                    create_article(eventList.data[i]);
-                }
+                for(var i = 0; i < rows.length; i++) {
+                    create_article(rows[i].value);
+                }                
             break;
             case 404: // Error: 404 - Resource not found!
                 alert("Resource not found!");
@@ -31,7 +32,14 @@ function get_data(e) {
        }
    }
 
-   xmlhttp.open("GET","http://localhost:8080/cgi-bin/events.py?n=" + num + "&offset=" + offset, false);
+  // cgi request
+  // xmlhttp.open("GET","http://localhost:8080/cgi-bin/events.py?n=" + num + "&offset=" + offset, true);
+  // couchdb request: 
+  //  1. Habilitar CORS 
+  //     http://docs.couchdb.org/en/1.4.x/configuring.html#cross-origin-resource-sharing
+  //  2. Necesario crear vista Event/by_date
+  //     function (doc) { if (doc.type == 'Event') { emit (doc.date, doc); } }
+   xmlhttp.open("GET", "http://localhost:5984/calendar/_design/Event/_view/by_date?limit="+ num + "&skip=" + offset, true);
    xmlhttp.send();
 }
 

@@ -21,7 +21,7 @@ def get_menu_items(dao):
                 </a>
             </li>"""
     for s in subjects:
-        name = s.decode('utf8')[1:]
+        name = s['value'].decode('utf8')[1:]
         result = result + """
             <li>
                 <a href="calendar2.py">
@@ -50,10 +50,10 @@ def get_events(dao):
             <p class="tags">{tags}</p>
             <p class="creator">{creator}</p>
         </article>""".format(
-            description=e['description'].encode('utf-8'), 
-            date=e['date'].encode('utf-8'), 
-            tags=list_to_string(e['tags']), 
-            creator=e['creator'].encode('utf-8'))
+            description=e['value']['description'].encode('utf-8'), 
+            date=e['value']['date'].encode('utf-8'), 
+            tags=list_to_string(e['value']['tags']), 
+            creator=e['value']['creator'].encode('utf-8'))
     
 
 

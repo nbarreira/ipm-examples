@@ -32,7 +32,7 @@ def main():
     [n, offset] = get_params()
     dao = get_database_connection()
     events = dao.findEvents(n, offset)
-    print '{ "count": ' + str(len(events)) + ', "data" : ' + json.dumps(events) + '}'
+    print '{ "count": ' + str(len(events)) + ', "rows" : ' + json.dumps(events) + '}'
         
 try:
     print 'Content-Type: application/json\n\n'
