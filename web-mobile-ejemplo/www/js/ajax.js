@@ -32,15 +32,19 @@ function get_data(e) {
        }
    }
 
-  // cgi request
-  // xmlhttp.open("GET","http://localhost:8080/cgi-bin/events.py?n=" + num + "&offset=" + offset, true);
+  // Opciones para hacer la petición (descomentar una):
+
+  // A. cgi request
+  xmlhttp.open("GET","http://localhost:8080/cgi-bin/events.py?n=" + num + "&offset=" + offset, true);
   
-  // couchdb request: 
+  // B. couchdb request: 
   //  1. Habilitar CORS 
   //     http://docs.couchdb.org/en/1.4.x/configuring.html#cross-origin-resource-sharing
   //  2. Necesario crear documento de diseño Event/by_date
   //     function (doc) { if (doc.type == 'Event') { emit (doc.date, doc); } }
-   xmlhttp.open("GET", "http://localhost:5984/calendar/_design/Event/_view/by_date?limit="+ num + "&skip=" + offset, true);
+  // xmlhttp.open("GET", "http://localhost:5984/calendar/_design/Event/_view/by_date?limit="+ num + "&skip=" + offset, true);
+  
+
    xmlhttp.send();
 }
 
