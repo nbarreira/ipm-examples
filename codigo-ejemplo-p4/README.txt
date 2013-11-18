@@ -14,6 +14,8 @@
 
 =============== Dependencias ===============
 
+Webcam conectada a ordenador!
+
 === Sistemas Linux ===
 
 Se recomienda la instalación por paquetes mediante apt/synaptic/...
