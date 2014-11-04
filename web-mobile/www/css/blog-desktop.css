@@ -1,0 +1,50 @@
+header {
+    display: block;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+header #logo {
+    background: url(../i/logo-large.png) no-repeat center;
+    height: 212px;
+    margin: 2em 0;
+}
+
+header h2 {
+    display: block;
+    color: #0083a1;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 2em;
+    padding: 0em 4%;
+}
+
+
+section#main {
+    width: 50%;
+    float: left;
+    margin: 2em 0;
+    padding: 0 3% 0 2%;
+}
+
+section#older-entries {
+    width: 20%;
+    float: left;
+    margin: 2em 0;
+    padding: 0 3% 0 0;
+}
+
+aside {
+    width: 20%;
+    float: left;
+    margin: 2em 0;
+    padding: 0 2% 0 0;
+}
+
+aside article#list, aside article#social, aside article#about {
+    padding: 0;
+}
+
+footer {
+    clear: both;
+}

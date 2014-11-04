@@ -1,76 +1,79 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>IPM Web Mobile Examples - 14/15</title>
 
-    <head>
-        <title>CSS Sprites</title>
-        
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-        
-        <style>
-            body {
-               font-family: Verdana, serif;               
-            }
-            
-            h1, h2 {
-                clear: both;
-            }
-            .wrapper {
-                margin: 10px auto;   
-                width: 800px;
-            }
-            
-            ul {
-                list-style: none;
-            }
-            
-            ul li {
-                float: left;
-                padding: 10px;
-            }
-            
-            .icon {
-                background-image: url(i/social-header.png);
-                width: 48px;
-                height: 48px;
-            }
-            .twitter {
-                background-position:-240px -212px;                
-            }
-            .facebook {
-                background-position:-288px -48px;                
-            }
-            .linkedin {
-                background-position: 1px -158px;                
-            }            
-            
-            a, i {
-                display: inline-block;
-                border: solid 1px gray;
-                border-radius: 5px;
-            }
-        </style>
-        
-        
-    </head>
-    
-    <body>
-        <div id="wrapper">
-        
-            <h1>Imagen sprite</h1>
-            <img src="i/social-header.png" alt="social icons" />
-            
-            <h2>Accediendo a una posición</h2>
-            
-            <ul>
-                <li><a href="#" class="icon twitter"> </a></li>
-                <li><a href="#" class="icon facebook"> </a></li>
-                <li><a href="#" class="icon linkedin"> </a></li>                
-            </ul>
-            
-            <h2>Más ejemplos...</h2>
-            
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/ipm.css" />
+
+    <style>
+        .icon {
+            background-image: url(i/social-header.png);
+            width: 48px;
+            height: 48px;
+        }
+        .twitter {
+            background-position:-240px -212px;
+        }
+        .facebook {
+            background-position:-288px -48px;
+        }
+        .linkedin {
+            background-position: 1px -158px;
+        }
+        a, i {
+            display: inline-block;
+            border: solid 1px gray;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+    <header>
+        <h1>CSS Sprites</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">&laquo; Back</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+
+        <h2>Original image</h2>
+
+        <img src="i/social-header.png" alt="social icons" />
+
+        <h2>Using CSS</h2>
+
+        <h3>List</h3>
+        <ul>
+            <li><a href="#" class="icon facebook"> </a></li>
+            <li><a href="#" class="icon linkedin"> </a></li>
+        </ul>
+
+
+        <h3>Paragraph</h3>
+        <p>
             <i class="icon twitter"> </i> Twitter
-        </div>    
-    </body>
+        </p>
+
+    </section>
+    <footer>
+        Interfaces Persona Máquina
+    </footer>
+
+</div>
+</body>
 
 
 </html>

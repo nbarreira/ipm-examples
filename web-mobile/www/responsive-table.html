@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive table layout</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/ipm.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Responsive table layout</title>
+    
+
         <style type="text/css" media="screen">
-            body {
-	            font-family: arial, sans-serif;		  		
-            }
-            
             table {
-                width: 100%;            
+            	margin: 0;
+            	padding: 0;
+            	width: 90%;
             }
             th {
                 background: #aaa;
@@ -43,9 +47,8 @@
             td:before {
     			position: absolute;
     			top: 6px;
-    			left: 6px;
+    			left: 5%;
     			width: 45%; 
-    			padding-right: 10px; 
     			white-space: nowrap;               
             }
 
@@ -60,6 +63,18 @@
     </head>
     <body>
         <div id="wrapper">
+    <header>
+        <h1>IPM Web Mobile</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Back</a>
+            </li>
+       </ul>
+    </nav>
+    <section>
             <h1>Exámenes grao</h1>
             <table>
                 <tr>
@@ -271,7 +286,14 @@
                     <td>00:00</td>
                 </tr>
             </table>
+            <p>
             <a href="http://css-tricks.com/responsive-data-tables/">Fuente</a>
+            </p>
         </div>
+    </section>
+    <footer>
+       Interfaces Persona Máquina
+    </footer>
+    
     </body>
 </html>

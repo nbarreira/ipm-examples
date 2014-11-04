@@ -1,0 +1,77 @@
+body {
+    font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+}
+
+a, a:hover {
+    color: #0083A1;
+    text-decoration: none;
+}
+
+time {
+	font-style: italic;
+	font-size: 0.75em; /* 12px / 16px */
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+}
+
+header h1 {
+	display: none;
+}
+
+header h2 {
+    color: #0083a1;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 1.5em;
+}
+
+header #logo {
+    background: url(../i/logo-small.png) no-repeat center bottom;
+    height: 120px;
+    width: 100%;
+}
+
+
+article h2 {
+	font-size: 1.25em; /* 20px / 16 px */
+}
+
+article p {
+    margin: 1em 0; /* 16px / 16px */
+    text-align: justify;
+}
+
+section h2, aside h2 {
+	font-size: 1.25em; /* 20px / 16 px */
+}
+
+
+section h3, aside h3 {
+	font-size: 1.125em; /* 18px / 16px */
+}
+
+aside ul {
+	margin: 0.5em 0; /* 8px / 16px */	
+	border-top: solid 0.125em #e3dcc0; /* 2px / 16 px */ 
+}
+
+aside ul li {
+	border-bottom: solid 0.125em #e3dcc0; /* 2px / 16 px */ 
+	padding: 0.5em 0; /* 8px /16px */
+}
+
+aside ul li span {
+	display: block;
+	font-size: 0.9em; /* 12px / 16 px */
+}
+
+footer {
+    padding: 1em;
+    background-color: #21160C;
+    color: #fff;
+    padding:  3em 1em; /* 48px / 16px | 16px / 16px */
+    text-align: right;
+}

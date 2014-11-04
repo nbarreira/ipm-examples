@@ -1,0 +1,66 @@
+header {
+    display: block;
+    margin-bottom: 2em;
+}
+
+header #logo {
+    background: url(../i/logo-small.png) no-repeat center bottom;
+    height: 120px;
+    padding: 0 4%;
+    margin: 0;
+}
+
+header h2 {
+    display: block;
+    width: 92%;
+    margin: 1em 0;
+    padding: 0 4%;
+    color: #0083a1;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+section#main {
+    width: 62%;
+    float: left;
+    margin: 0;
+    padding: 0 4%;
+}
+
+section#older-entries {
+    width: 26%;
+    float: right;
+    padding: 0 4% 0 0;
+    margin: 0;
+
+}
+
+aside {
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+aside h2 {
+    width: 92%;
+    margin: 0 4%;
+    padding-top: 2em;
+}
+
+aside div#list{
+    width: 62%;
+    float: left;
+    margin: 1em 0 2em;
+    padding: 0 4%;
+}
+
+aside div#about, aside div#social {
+    width: 26%;
+    float: right;
+    margin: 0 4% 0 0;
+}
+
+footer {
+    clear: both;
+}
