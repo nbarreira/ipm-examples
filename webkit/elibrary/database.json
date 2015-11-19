@@ -1,0 +1,36 @@
+[{
+"id": 111,
+"title": "La chica del tren",
+"author": "Paula Hawkins",
+"editorial": "Planeta",
+"cover": "covers/im1.jpg",
+"year": 2015,
+"synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim enim non turpis scelerisque, vel tristique est cursus. Suspendisse faucibus ligula ac elit vestibulum suscipit. Maecenas nec est elit. In congue ornare mauris ac dignissim. Maecenas et gravida ligula, sit amet mattis est. Nulla in neque pharetra, rhoncus orci at, ultrices magna. Vivamus nibh ante, tincidunt a metus pretium, auctor semper purus."
+},
+{
+"id": 112,
+"title": "Conversaciones conmigo mismo",
+"author": "Nelson Mandela",
+"editorial": "Planeta",
+"cover": "covers/im2.jpg",
+"year": 2010,
+"synopsis": "Nullam in ex eget odio tempor viverra. Mauris blandit augue ac felis dictum gravida. Vestibulum magna tortor, pellentesque eu molestie a, aliquet quis ipsum. Etiam lacinia nisi vitae consectetur molestie. Curabitur venenatis eu magna eu auctor. Quisque in risus velit. Integer nulla purus, semper ut mauris ut, consequat efficitur magna. Maecenas eu facilisis arcu. "
+},
+{
+"id": 113,
+"title": "El principe de la niebla",
+"author": "Carlos Ruiz Zafon",
+"editorial": "Planeta",
+"cover": "covers/im3.jpg",
+"year": 2007,
+"synopsis": "Etiam auctor, nisi quis consequat ultricies, orci dolor porta metus, id tempus libero urna sit amet ligula. Cras in venenatis magna, eu venenatis felis. Sed eu eros justo. Nunc a urna consequat, viverra odio eu, congue lorem. Fusce sed sem ullamcorper, luctus metus a, maximus purus. Pellentesque tincidunt auctor vestibulum. Donec id fermentum enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+},
+{
+"id": 114,
+"title": "Los crimenes del abecedario",
+"author": "Esteban Navarro",
+"editorial": "Ediciones B",
+"cover": "covers/im4.jpg",
+"year": 2014,
+"synopsis": "Ut nulla tellus, scelerisque eget commodo eget, tristique id libero. Integer vulputate eros in turpis molestie posuere. Nunc id ullamcorper tellus. Fusce volutpat, velit at sollicitudin iaculis, dolor velit rutrum augue, ut imperdiet turpis elit et felis. Sed pellentesque tristique quam. Maecenas molestie scelerisque faucibus. Vivamus pellentesque consequat odio at pharetra. Pellentesque a aliquam justo, a dictum nunc. "
+}]

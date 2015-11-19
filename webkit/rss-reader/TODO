@@ -1,0 +1,10 @@
+* Race condition: hide_dialog
+
+* Cache de verdad
+    - Honour http headers
+    - Agregar feeds
+    - Cache de webkit (recursos que descarga webkit)
+
+* Si se hacen varias peticiones seguidas, "ordenar" las respuestas. Si después de hacer petición 1, 2, ..., n, hemos actualizado con la respuesta de n, no admitir respuestas anteriores.
+
+* Añadir timeout (socket.setdefaulttimeout) a la carga de rss y gestionarlos.
