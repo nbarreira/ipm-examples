@@ -37,3 +37,13 @@ $ python -m http.server        # python 3
 * Blog Responsive
 
 * Blog responsive con Bootstrap
+
+### Instrucciones
+
+1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
+```bash
+$ cd ipm-examples/ajax
+$ python -m SimpleHTTPServer   # python 2.7
+$ python -m http.server        # python 3
+```
+2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
