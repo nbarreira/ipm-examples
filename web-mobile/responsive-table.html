@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/ipm.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Responsive table layout</title>
+    
+
+        <style type="text/css" media="screen">
+            table {
+            	margin: 0;
+            	padding: 0;
+            	width: 90%;
+            }
+            th {
+                background: #aaa;
+                color: #fff;            
+            }
+            tr:nth-of-type(odd) { 
+                background: #eee; 
+            }
+            td {
+                padding: 5px;
+            }
+        </style>
+        
+        <!--[if !IE]><!-->
+        <style type="text/css" media="only screen and (max-width: 640px)">
+            th {                 
+                position: absolute;
+			    top: -9999px;
+			    left: -9999px;            
+            }
+            table, th, td, tr { 
+			     display: block; 
+		    }
+            td {
+                padding: 3px;
+                position: relative;
+			    padding-left: 50%;  
+            }
+            
+            td:before {
+    			position: absolute;
+    			top: 6px;
+    			left: 5%;
+    			width: 45%; 
+    			white-space: nowrap;               
+            }
+
+            td:nth-of-type(1):before { content: "Curso";}
+            td:nth-of-type(2):before { content: "Materia";}
+            td:nth-of-type(3):before { content: "Data"; }
+            td:nth-of-type(4):before { content: "Hora inicio"; }
+            td:nth-of-type(5):before { content: "Aulas"; }
+            td:nth-of-type(6):before { content: "Hora fin"; }
+        </style>
+        <!--<![endif]-->
+    </head>
+    <body>
+        <div id="wrapper">
+    <header>
+        <h1>IPM Web Mobile</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Back</a>
+            </li>
+       </ul>
+    </nav>
+    <section>
+            <h1>Exámenes grao</h1>
+            <table>
+                <tr>
+                    <th>Curso</th>
+                    <th>Materia</th>
+                    <th>Data</th>
+                    <th>Hora inicio</th>
+                    <th>Aulas</th>
+                    <th>Hora fin</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Calculo</td>
+                    <td>15/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Tecnoloxía Electrónica</td>
+                    <td>10/01/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Informática Básica</td>
+                    <td>17/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Matemática Discreta</td>
+                    <td>22/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Programación1</td>
+                    <td>08/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Programación2</td>
+                    <td>30/05/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Fundamentos dos Computadores</td>
+                    <td>04/06/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Estadistica</td>
+                    <td>27/05/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Administración e Xestión de Organizacións</td>
+                    <td>19/05/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alxebra</td>
+                    <td>22/05/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Calculo</td>
+                    <td>04/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Tecnoloxía Electrónica</td>
+                    <td>02/07/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Informática Básica</td>
+                    <td>07/07/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Matemática Discreta</td>
+                    <td>09/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Programación1</td>
+                    <td>01/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Programación2</td>
+                    <td>16/07/2014</td>
+                    <td>11:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Fundamentos dos Computadores</td>
+                    <td>18/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Estadistica</td>
+                    <td>15/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Administración e Xestión de Organizacións</td>
+                    <td>10/07/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alxebra</td>
+                    <td>11/07/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Algoritmos</td>
+                    <td>16/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Estructura de Computadores</td>
+                    <td>09/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Paradigmas de Programación</td>
+                    <td>13/01/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Diseño Software</td>
+                    <td>23/01/2014</td>
+                    <td>08:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sistemas Operativos</td>
+                    <td>20/01/2014</td>
+                    <td>15:30</td>
+                    <td>A.3.0 A.3.4 A.3.1 A.3.Exam</td>
+                    <td>00:00</td>
+                </tr>
+            </table>
+            <p>
+            <a href="http://css-tricks.com/responsive-data-tables/">Fuente</a>
+            </p>
+        </div>
+    </section>
+    <footer>
+       Interfaces Persona Máquina
+    </footer>
+    
+    </body>
+</html>

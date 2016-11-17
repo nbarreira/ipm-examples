@@ -30,3 +30,10 @@ $ python -m http.server        # python 3
 ```
 3. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
 
+## Web Mobile
+
+* Recursos HTML5 y CSS3 para web mobile.
+
+* Blog Responsive
+
+* Blog responsive con Bootstrap

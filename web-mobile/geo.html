@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPM Web Mobile Examples - 15/16</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/ipm.css" />
+
+    <script type="text/javascript">
+
+        function showPosition(position) {
+            document.querySelector("#longitude").value = position.coords.longitude;
+            document.querySelector("#latitude").value = position.coords.latitude;
+            document.querySelector("#accuracy").value = position.coords.accuracy;
+            document.querySelector("#altitude").value = position.coords.altitude;
+            document.querySelector("#altitudeAccuracy").value = position.coords.altitudeAccuracy;
+            document.querySelector("#heading").value = position.coords.heading;
+            document.querySelector("#speed").value = position.coords.speed;
+            document.querySelector("#timestamp").value = (new Date(position.timestamp)).toLocaleString();
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.querySelector("#error").innerHTML = "getCurrentPosition: Permision denied";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.querySelector("#error").innerHTML ="getCurrentPosition: Position unavaliable";
+                    break;
+                case error.TIMEOUT:
+                    document.querySelector("#error").innerHTML ="getCurrentPosition: Timeout";
+                    break;
+            }
+        }
+        var watchId = null;
+        function init() {
+            document.querySelector("#geolocateMe").onclick = function() {
+                if (navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                 }
+            }
+            document.querySelector("#watchMe").onclick = function(e) {
+                if (navigator.geolocation){
+                    if (watchId == null) {
+                        var options = {
+                            enableHighAccuracy: true,
+                            timeout: 10000
+                        }
+                        watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
+                        e.target.innerHTML = "Deja de seguirme";
+                    } else {
+                        navigator.geolocation.clearWatch(watchId);
+                        watchId = null;
+                        e.target.innerHTML = "Sígueme";
+                    }
+                 }
+            }
+        }
+        window.onload = init;
+    </script>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+    <header>
+        <h1>Geolocalización</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">&laquo; Back</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>HTML Geolocalization API</h2>
+        <a href="#" id="geolocateMe">Geolocalízame</a> |
+        <a href="#" id="watchMe">Sígueme</a>
+        <h3>Datos</h3>
+        <label for="longitude">
+            Longitud
+        </label>
+        <input type="text" id="longitude" />
+        <label for="latitude">
+            Latitud
+        </label>
+        <input type="text" id="latitude" />
+        <label for="accuracy">
+            Precisión
+        </label>
+        <input type="text" id="accuracy" />
+        <label for="altitude">
+            Altitud
+        </label>
+        <input type="text" id="altitude" />
+        <label for="altitudeAccuracy">
+            Precisión altitud
+        </label>
+        <input type="text" id="altitudeAccuracy" />
+        <label for="heading">
+            Grados a partir del Polo Norte
+        </label>
+        <input type="text" id="heading" />
+        <label for="speed">
+            Velocidad
+        </label>
+        <input type="text" id="speed" />
+        <label for="timestamp">
+            Timestamp
+        </label>
+        <input type="text" id="timestamp" />
+        <h3>Errores</h3>
+        <p id="error"></p>
+    </section>
+
+    <footer>
+        Interfaces Persona Máquina
+    </footer>
+
+</div>
+
+</body>
+
+</html>

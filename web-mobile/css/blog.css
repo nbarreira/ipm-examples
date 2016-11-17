@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+img { 
+}
+
+a {
+    color: #0083A1;
+    text-decoration: none;
+}
+
+figure {
+    text-align: center;
+}
+
+
+time {
+	font-style: italic;
+	font-size: 12px;
+}
+
+#wrapper {
+}
+
+nav {
+    background-color: #21160C;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    width: 80px;
+    float: left;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #fff;
+    padding: 12px 4px;
+    display: block;
+}
+
+header{
+    clear: both;
+}
+
+header h1, header h2 {
+	display: none;
+}
+
+header #logo {
+    background: url(../i/logo-small.png) no-repeat center bottom;
+    height: 120px;
+}
+
+section {
+}
+section, aside {
+    margin: 64px 16px;
+}
+
+section#main {
+    margin-top: 32px;
+}
+
+article {
+}
+
+article h2 {
+	font-size: 20px;
+}
+
+article p {
+    margin: 16px 0;
+    text-align: justify;
+}
+
+
+section h2, aside h2 {
+	font-size: 20px;
+}
+
+
+section h3, aside h3 {
+	font-size: 18px;
+    margin: 16px 0 0;
+}
+
+aside ul {
+	list-style: none;
+	margin: 8px 0; 	
+	border-top: solid 2px #e3dcc0;
+}
+
+aside ul li {
+	border-bottom: solid 2px #e3dcc0; 
+	padding: 2px 0; 
+}
+
+aside ul li span {
+	display: block;
+	font-size: 14px;
+}
+
+.icon {
+    background-image: url(../i/social-header.png);
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.twitter {
+    background-position: -240px -212px;    
+}
+
+.facebook {
+    background-position: -288px -48px;    
+}
+
+footer {
+    background-color: #21160C;
+    color: #fff;
+    padding:  48px 16px;
+    overflow: hidden;
+    text-align: right;
+}
