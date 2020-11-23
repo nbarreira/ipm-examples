@@ -1,0 +1,14 @@
+header div.title {
+    background-image: url('../img/background-md.jpg');
+}
+
+section#zone2 {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-gap: 4%;
+}
+
+footer form {
+    width: 70%;
+    margin: 0 auto;
+}

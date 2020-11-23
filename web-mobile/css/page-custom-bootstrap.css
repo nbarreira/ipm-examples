@@ -1,0 +1,97 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: normal;
+    color: tomato !important;
+}
+
+header {
+    background-color: #333;
+}
+
+header nav a {
+    color: white;
+    font-weight: bold;
+}
+
+header div.jumbotron {
+    clear: both;
+    background-image: url('../img/background-sm.jpg');
+    background-size: cover;
+    height: 40vh;
+    padding: 0 2em;
+}
+
+@media only screen and (min-width: 768px) {
+    header div.jumbotron {
+        background-image: url('../img/background-md.jpg');
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header div.jumbotron {
+        background-image: url('../img/background-lg.jpg');
+    }
+}
+
+header div.jumbotron h3 {
+    margin-top: 0;
+    font-size: 3vh;
+    padding-top: 12vh;
+    color: white;
+}
+
+button {
+    font-size: 1.25em!important;
+    padding: 0.25em 0.5em!important;
+    color: white;
+    border: solid 3px white !important;
+    background-color: Transparent;
+    outline: none;
+}
+
+main, footer {
+    font-size: 1.25em;
+}
+
+i {
+    color: tomato;
+}
+
+section {
+    padding: 2em;
+}
+
+footer {
+    background-color: tomato;
+    color: white;
+    padding: 2em;
+}
+
+footer h2 {
+    color: white !important;
+}
+
+footer form input::placeholder, footer form textarea::placeholder {
+    color: white !important;
+    opacity: 0.8;
+}
+
+footer form input, footer form textarea {
+    border: 0 !important;
+    border-bottom: solid 3px white !important;
+    outline: none;
+    color: white !important;
+    background-color: Transparent !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.25em !important;
+    margin-bottom: 0.5em !important;
+}
+
+footer div.contact {
+    margin-top: 1em;
+    font-size: 0.8em;
+}

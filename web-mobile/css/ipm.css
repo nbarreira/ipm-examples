@@ -30,6 +30,12 @@ a {
     color: royalblue;
 }
 
+nav h2 {
+    padding: 0 1em;
+    color: gray;
+    display: inline-block;
+}
+
 nav ul {
     list-style: none;
     margin: 0;

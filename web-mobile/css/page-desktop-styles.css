@@ -1,0 +1,47 @@
+header nav, header div.title h3, header div.title p, section, footer h2, footer form, footer div {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header nav h1 {
+    padding-left: 0;
+}
+
+header nav div {
+    padding-right: 0;
+}
+
+header div.title {
+    background-image: url('../img/background-lg.jpg');
+}
+
+header div.title p {
+    margin-top: 2em;
+}
+
+section#zone2 {
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22% !important;
+    grid-gap: 4%;
+}
+
+section div.image {
+    width: 50%;
+    float: left;
+    margin-bottom: 2em;
+}
+
+section div.text {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+}
+
+footer {
+    clear: both;
+}
+
+footer form {
+    width: 50%;
+    margin: 2em auto;
+}
