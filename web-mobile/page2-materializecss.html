@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>IPM Page</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             var elems = document.querySelectorAll('.sidenav');
+             var instances = M.Sidenav.init(elems, {});
+         });
+         
+      </script>
+   </head>
+   <body>
+      <div id="wrapper" class="container">
+         <header>
+            <nav class="grey darken-3">
+               <div class="nav-wrapper">
+                  <a href="#!" class="brand-logo amber-text text-lighten-1">Logo</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                     <li><a href="#zone1">One</a></li>
+                     <li><a href="#zone2">Two</a></li>
+                     <li><a href="#zone3">Three</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
+               <li><a href="#zone1">One</a></li>
+               <li><a href="#zone2">Two</a></li>
+               <li><a href="#zone3">Three</a></li>
+            </ul>
+         </header>
+         <main>
+            <section>
+               <h3 class="light-green-text text-darken-2">
+                  Pellentesque a arcu vitae augue efficitur finibus et eget odio.
+               </h3>
+               <p>
+                  <button class="waves-effect waves-light btn amber lighten-1">
+                  Learn more
+                  </button>
+               </p>
+            </section>
+            <section id="zone1">
+               <h2 class="light-green-text text-darken-2">Nam nec sem ac</h2>
+               <p>
+                  Vivamus luctus purus sed gravida efficitur. Sed vitae mauris posuere, imperdiet velit sit amet, imperdiet felis. Suspendisse mollis eros at orci euismod ullamcorper ac ut tortor. Vestibulum quis turpis posuere nisl malesuada
+                  elementum.
+                  Etiam accumsan venenatis mi, eu tincidunt diam vestibulum sit amet. Maecenas in justo fringilla, convallis ligula a, pharetra leo. Fusce pulvinar ut leo non interdum. Sed auctor felis id tempus sollicitudin.
+               </p>
+            </section>
+            <section id="zone2" class="row">
+               <div class="col s12 m6 l3">
+                  <div class="card center">
+                     <div class="card-img">
+                        <i class="fab fa-pied-piper-hat fa-5x"></i>
+                     </div>
+                     <div class="card-content">
+                        Vestibulum viverra nibh sed lorem euismod, eget molestie tellus maximus. Aliquam lobortis, augue id volutpat commodo, urna elit molestie ante, sed gravida mi mi at odio.
+                     </div>
+                  </div>
+               </div>
+               <div  class="col s12 m6 l3">
+                  <div class="card center">
+                     <div class="card-img">
+                        <i class="fas fa-dragon fa-5x"></i>
+                     </div>
+                     <div class="card-content">
+                        Donec accumsan lectus elementum, dignissim orci at, ullamcorper neque. Sed neque tellus, condimentum at tortor eget, vehicula porta tellus. Nam porta ex in felis consectetur auctor.
+                     </div>
+                  </div>
+               </div>
+               <div  class="col s12 m6 l3">
+                  <div class="card center">
+                     <div class="card-img">
+                        <i class="fas fa-quidditch fa-5x"></i>
+                     </div>
+                     <div class="card-content">
+                        Mauris dapibus congue tortor eu ultrices. Aenean varius fermentum est at tempor. Duis venenatis sem at porttitor efficitur. Suspendisse eros libero, facilisis sit amet enim sed, bibendum pulvinar diam.
+                     </div>
+                  </div>
+               </div>
+               <div  class="col s12 m6 l3">
+                  <div class="card center">
+                     <div class="card-img">
+                        <i class="fab fa-rebel fa-5x"></i>
+                     </div>
+                     <div class="card-content">
+                        Suspendisse et nibh sed orci mollis gravida. Duis ullamcorper, nulla ac sagittis elementum, nulla enim porttitor neque, non aliquam lacus mi id enim.
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section id="zone3">
+               <h2 class="light-green-text text-darken-2">Donec eu ipsum sed</h2>
+               <div>
+                  <picture >
+                     <source media="(max-width: 767px)" srcset="img/image-xs.jpg">
+                     <source media="(min-width: 768px)" srcset="img/image-lg.jpg">
+                     <img class="responsive-img" src="img/image-md.jpg" alt="image 1">
+                  </picture>
+               </div>
+               <div>
+                  <p>
+                     Fusce faucibus, ipsum in eleifend tempor, leo magna egestas orci, id dapibus ipsum metus eu tellus. Nullam vitae eros odio. Pellentesque fringilla feugiat tellus nec fringilla. Donec lobortis diam condimentum neque pulvinar
+                     sagittis. Quisque porttitor sem turpis, at mollis justo iaculis vitae. Proin nec massa quis ligula tristique lobortis. Duis lorem mauris, efficitur vel quam nec, tincidunt faucibus quam.
+                  </p>
+               </div>
+            </section>
+         </main>
+         <footer id="zone4" class="page-footer green darken-2">
+            <div class="container">
+               <h2>Morbi non tincidunt ex</h2>
+               <form>
+                  <div class="input-field">
+                     <input type="email" placeholder="Email" />
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Subject" />
+                  </div>
+                  <div class=input-field">
+                     <textarea class="materialize-textarea" placeholder="Write your message..."></textarea>
+                  </div>
+                  <button class="btn white black-text">
+                  Send
+                  </button>
+               </form>
+            </div>
+            <div class="footer-copyright">
+               <div class="container">
+                  IPM
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
