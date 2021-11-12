@@ -4,8 +4,8 @@ header div.title {
 
 section#zone2 {
     display: grid;
-    grid-template-columns: 48% 48%;
-    grid-gap: 4%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1%;
 }
 
 footer form {

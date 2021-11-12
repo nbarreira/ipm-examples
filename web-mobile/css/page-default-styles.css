@@ -98,6 +98,15 @@ div.card div.card-body {
     margin-top: 1em;
 }
 
+section#zone3 {
+    display:  flex;
+    flex-flow: row wrap;
+}
+
+section#zone3 h2, section#zone3 div {
+    width:  100%;
+}
+
 footer {
     background-color: tomato;
     color: white;
