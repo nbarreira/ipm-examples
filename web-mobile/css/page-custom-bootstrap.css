@@ -25,6 +25,9 @@ header div.jumbotron {
     padding: 0 2em;
 }
 
+nav .nav-link {
+    color:  white;
+}
 @media only screen and (min-width: 768px) {
     header div.jumbotron {
         background-image: url('../img/background-md.jpg');
@@ -47,7 +50,7 @@ header div.jumbotron h3 {
 button {
     font-size: 1.25em!important;
     padding: 0.25em 0.5em!important;
-    color: white;
+    color: white!important;
     border: solid 3px white !important;
     background-color: Transparent;
     outline: none;
