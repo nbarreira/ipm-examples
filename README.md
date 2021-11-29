@@ -49,3 +49,17 @@ $ cd ipm-examples/web-mobile/
 $ python -m http.server        # python 3
 ```
 2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
+
+
+## A11y
+
+* Ejemplo de etiquetado WAI-ARIA
+
+### Instrucciones
+
+1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
+```bash
+$ cd ipm-examples/a11y
+$ python -m http.server        # python 3
+```
+2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).

@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding:  0;
+    font-family: 'Poppins', sans-serif;
+}
+
+input, select {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    width:  100%;
+    background-color: slategray;
+    display: flex;
+    align-content: stretch;
+}
+
+nav h1 {
+    margin: 0;
+    padding: 0;
+    color:  white;
+}
+nav button {
+    border:  0;
+    font-size:  2em;
+    width: 1.5em;
+    background-color:  slategray;
+    color:  white;
+}
+
+nav div {
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    background-color:  white;
+    padding:  0;
+}
+
+nav ul li {
+    font-size: 1.2em;
+    padding: 0.5em 0.25em;
+    border:  solid 1px gray;
+    border-top: 0;
+
+}
+
+nav ul.open {
+    display: block;
+    position: fixed;
+    margin-top:  2.4em;
+    width:  200px;
+    background-color:  white;
+}
+
+section {
+    margin:  0 2.5em;
+}
+
+form input, form label, form button {
+    display:  block;
+}
+
+form p {
+    font-size:  0.85em;
+}
+
+form label, form button {
+    margin-top:  1em;
+}
+
+form button {
+    border: 0;
+    background-color: lightcoral;
+    color: white;
+    padding: 0.5em 1em;
+}
+
+.error {
+    background-color: darkred;
+    color:  white;
+    padding: 0.2em 0.4em;
+    font-weight: bold;
+}
+
+.description {
+    border:  solid 1px slategray;
+    padding: 0.2em 0.4em;
+}
+.hidden {
+    display: none;
+}
+
+div.modal {
+    background-color:  black;
+    opacity: 0.7;
+    color:  white;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    right: 2em;
+    top:  4em;
+    text-align: right;
+    padding: 0 0.5em;
+}
+
+div.modal span.close {
+    font-size:  2em;
+    line-height: 1em;
+}
+
+div.modal-error {
+    background-color:  darkred;
+}
+
+div.modal span.close:hover,
+div.model span.close:focus {
+    cursor:  pointer;
+}
+
+
+div.modal div {
+    text-align:  left;
+    margin:  0;
+    padding-bottom:  0.5em;
+}
+

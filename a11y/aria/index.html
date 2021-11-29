@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>IPM A11y Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav>
+            <button aria-controls="menu" aria-label="menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1>A11y example</h1>
+            <ul id="menu" aria-expanded="false">
+                <li><a>Menu 1</a></li>
+                <li><a>Menu 2</a></li>
+                <li><a>Menu 3</a></li>
+                <li><a>Menu 4</a></li>
+            </ul>
+        </nav>
+        <section>
+        <h2>Form</h2>
+
+        <form>
+            <label for="field1">Email</label>
+            <input type="text" id="field1" required aria-required="true" aria-invalid="false" aria-errormessage="field1Error"/>
+            <p id="field1Error" class="error hidden">The email is incorrect</p>
+
+            <label for="field2">Select an option:</label>
+            <select id="field2">
+                <option value="0">Option 1</option>
+                <option value="1">Option 2</option>
+                <option value="2">Option 3</option>
+            </select>
+            <p id="field2Description" class="description" aria-live="polite"></p>
+            <button>
+                Submit
+            </button>
+        </form>
+        <div id="modal" class="modal hidden" role="alert" aria-live="assertive" aria-label="submission result">
+            <span class="close" role="button" aria-label="close">&times;</span>
+            <div id="info"></div>
+        </div>
+        </section>
+
+        <script type="text/javascript" src="main.js"></script>
+
+    </body>
+</html>
