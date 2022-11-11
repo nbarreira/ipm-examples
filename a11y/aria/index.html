@@ -17,13 +17,13 @@
             <button aria-controls="menu" aria-label="menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <h1>A11y example</h1>
             <ul id="menu" aria-expanded="false">
                 <li><a>Menu 1</a></li>
                 <li><a>Menu 2</a></li>
                 <li><a>Menu 3</a></li>
                 <li><a>Menu 4</a></li>
             </ul>
+            <h1>A11y example</h1>
         </nav>
         <section>
         <h2>Form</h2>
@@ -44,8 +44,10 @@
                 Submit
             </button>
         </form>
-        <div id="modal" class="modal hidden" role="alert" aria-live="assertive" aria-label="submission result">
-            <span class="close" role="button" aria-label="close">&times;</span>
+        <div id="modal" class="modal hidden" role="alert" aria-live="assertive" aria-relevant="additions" aria-label="submission result">
+            <button class="close" aria-label="close">
+                <i class="fa-solid fa-close"></i>
+            </button>
             <div id="info"></div>
         </div>
         </section>

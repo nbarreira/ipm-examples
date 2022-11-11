@@ -20,6 +20,7 @@ nav h1 {
     padding: 0;
     color:  white;
 }
+
 nav button {
     border:  0;
     font-size:  2em;
@@ -105,18 +106,24 @@ div.modal {
     padding: 0 0.5em;
 }
 
-div.modal span.close {
+div.modal button.close {
     font-size:  2em;
     line-height: 1em;
+    border:  0;
+    font-size:  2em;
+    width: 1.5em;
+    color:  white;
+    background-color: black;
+    opacity: 0.7;
+
 }
 
 div.modal-error {
     background-color:  darkred;
 }
 
-div.modal span.close:hover,
-div.model span.close:focus {
-    cursor:  pointer;
+div.modal-error button.close {
+    background-color:  darkred;
 }
 
 

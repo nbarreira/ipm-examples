@@ -30,8 +30,10 @@ document.querySelector("nav button").addEventListener("click", function (event) 
     document.querySelector("nav button i").classList.toggle("fa-close");
     if (menu.classList.contains("open")) {
         menu.setAttribute("aria-expanded", "true");
+        document.querySelector("nav button").setAttribute("aria-label", "close menu");
     } else {
         menu.setAttribute("aria-expanded", "false");
+        document.querySelector("nav button").setAttribute("aria-label", "open menu");
     }
 });
 

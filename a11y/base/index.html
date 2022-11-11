@@ -17,13 +17,13 @@
             <button>
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <h1>A11y example</h1>
             <ul>
                 <li><a>Menu 1</a></li>
                 <li><a>Menu 2</a></li>
                 <li><a>Menu 3</a></li>
                 <li><a>Menu 4</a></li>
             </ul>
+            <h1>A11y example</h1>
         </nav>
         <section>
         <h2>Form</h2>
@@ -45,7 +45,9 @@
             </button>
         </form>
         <div id="modal" class="modal hidden">
-            <span class="close">&times;</span>
+            <button class="close" aria-label="close">
+                <i class="fa-solid fa-close"></i>
+            </button>
             <div id="info"></div>
         </div>
         </section>
