@@ -1,5 +1,6 @@
 const loginForm = document.querySelector('#login-form')
 const logoutForm = document.querySelector('#logout-form');
+const exampleGet1 = document.querySelector('#example-get-1');
 const exampleGet2 = document.querySelector('#example-get-2');
 const exampleGet3 = document.querySelector('#example-get-3');
 const progressBar = document.querySelector('div#progress-ex2');
@@ -9,6 +10,7 @@ var token = null;
 
 function do_login() {
     logoutForm.style.display = 'block'; 
+    exampleGet1.style.display = 'none';
     exampleGet2.style.display = 'block';
     exampleGet3.style.display = 'block';
 
@@ -19,6 +21,7 @@ function do_login() {
 
 function do_logout() {
     logoutForm.style.display = 'none'; 
+    exampleGet1.style.display = 'block';
     exampleGet2.style.display = 'none';
     exampleGet3.style.display = 'none';
 
@@ -41,6 +44,16 @@ function handleErrors(response) {
 do_logout();
 
 /* Assign callbacks */
+
+/* GET request and JSON response */
+document.querySelector('#a-get-1').addEventListener('click',event  => {
+        fetch("https://dog.ceo/api/breeds/image/random")
+        .then(response => response.json())
+        .then(response => document.querySelector("#image1").src = response['message'])
+        .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
+});
+
+
 
 /* POST request with FormData */
 document.querySelector('form#formpost').addEventListener('submit', event => {
@@ -103,13 +116,6 @@ document.querySelector('#btn-logout').addEventListener('click', event => {
 
 });
 
-/* GET request and JSON response */
-document.querySelector('#a-get-1').addEventListener('click',event  => {
-        fetch("https://dog.ceo/api/breeds/image/random")
-        .then(response => response.json())
-        .then(response => document.querySelector("#image1").src = response['message'])
-        .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
-});
 
     
 

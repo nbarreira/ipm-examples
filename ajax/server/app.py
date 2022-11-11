@@ -30,9 +30,9 @@ def login():
         username = request.json.get('username', None)
         password = request.json.get('password', None)
         if not username:
-            return jsonify({"msg": "Missing username parameter"}), 400
+            return jsonify({"msg": "Missing username parameter"}), 401
         if not password:
-            return jsonify({"msg": "Missing password parameter"}), 400
+            return jsonify({"msg": "Missing password parameter"}), 401
 
     else:
         username = request.form['username']
@@ -49,7 +49,7 @@ def login():
 # Protect a view with jwt_required, which requires a valid access token
 # in the request to access.
 @app.route('/protected', methods=['GET'])
-@jwt_required
+@jwt_required()
 def protected():
     # Access the identity of the current user with get_jwt_identity
     current_user = get_jwt_identity()
@@ -66,7 +66,7 @@ def image():
     return send_file(io.BytesIO(file.read()),
         mimetype='image/png',
         as_attachment=True,
-        attachment_filename=imagename)
+        download_name=imagename)
 
 if __name__ == '__main__':
     app.run()
