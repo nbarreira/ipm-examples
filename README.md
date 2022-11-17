@@ -4,6 +4,37 @@ ipm-examples
 Ejemplos de la asignatura Interfaces Persona Máquina para el curso 22/23
 Facultade de Informática, Universidade da Coruña.
 
+## A11y
+
+* Ejemplo de etiquetado WAI-ARIA
+
+### Instrucciones
+
+1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
+```bash
+$ cd ipm-examples/a11y
+$ python -m http.server        # python 3
+```
+2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
+
+
+## Web Mobile
+
+* Recursos HTML5 y CSS3 para web mobile
+
+* Página web con Responsive Web Design
+
+* Página web responsive con Bootstrap
+
+### Instrucciones
+
+1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
+```bash
+$ cd ipm-examples/web-mobile/
+$ python -m http.server        # python 3
+```
+2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
+
 ## AJAX
 
 Aplicación que muestra como usar fetch para realizar distintos tipos de peticiones AJAX a Dog API y a una API ad hoc implementada en python con el framework Flask.
@@ -33,33 +64,4 @@ $ python -m http.server        # python 3
 ```
 3. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
 
-## Web Mobile
 
-* Recursos HTML5 y CSS3 para web mobile
-
-* Página web con Responsive Web Design
-
-* Página web responsive con Bootstrap
-
-### Instrucciones
-
-1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
-```bash
-$ cd ipm-examples/web-mobile/
-$ python -m http.server        # python 3
-```
-2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
-
-
-## A11y
-
-* Ejemplo de etiquetado WAI-ARIA
-
-### Instrucciones
-
-1. Copia los ficheros en un servidor web (apache, nginx, ...). Si no dispones de un servidor web puedes utilizar el servidor HTTP básico que incorpora python: 
-```bash
-$ cd ipm-examples/a11y
-$ python -m http.server        # python 3
-```
-2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
