@@ -1,7 +1,7 @@
 ipm-examples
 ============
 
-Ejemplos de la asignatura Interfaces Persona Máquina para el curso 20/21
+Ejemplos de la asignatura Interfaces Persona Máquina para el curso 22/23
 Facultade de Informática, Universidade da Coruña.
 
 ## AJAX
