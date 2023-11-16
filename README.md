@@ -1,7 +1,7 @@
 ipm-examples
 ============
 
-Ejemplos de la asignatura Interfaces Persona Máquina para el curso 22/23
+Ejemplos de la asignatura Interfaces Persona Máquina
 Facultade de Informática, Universidade da Coruña.
 
 ## A11y
