@@ -25,6 +25,11 @@ section#zone2 {
     grid-gap: 1%;
 }
 
+section#zone3 {
+    display:  flex;
+    flex-flow: row wrap;
+}
+
 section#zone3 div {
     width: 45%;
 }

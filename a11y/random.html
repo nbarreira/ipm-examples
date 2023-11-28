@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Regiones activas</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Raleway, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: gray;
+            color: white;
+            margin: 0;
+            padding: 0.25em 1em;
+        }
+
+        main,
+        footer {
+            margin: 0;
+            padding: 0.25em 1em;
+        }
+
+
+        div#random p {
+            color: orangered;
+            font-size: 2em;
+        }
+        button {
+            padding: 8px;
+        }
+        
+
+        footer {
+            color: gray;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header>
+            <h1>Interfaces Persona Máquina: Accesibilidad</h1>
+        </header>
+
+        <main>
+            <div aria-live="assertive" role="log" id="random">
+                <p>nada todavía</p>
+            </div>
+            <div role="toolbar" aria-controls="random" aria-label="Controla la generación de números aleatorios">
+                <button id="start">Start</button>
+                <button class="disabled" id="stop" aria-disabled="true" disabled>Stop</button>
+            </div>
+        </main>
+
+        <footer>
+            Noelia Barreira Rodríguez
+        </footer>
+
+        <script>
+            const setButtonDisabled = (selector, disabled) => {
+                if (disabled) {
+                    document.querySelector(selector).disabled = true;
+                } else {
+                    document.querySelector(selector).removeAttribute("disabled");
+
+                }
+                document.querySelector(selector).setAttribute("aria-disabled", disabled);
+            }
+            const randomInt = (min, max) => {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+            var timer = null;
+
+            document.querySelector('#start').onclick = (event) => {
+                setButtonDisabled('#start', true); 
+                event.target.classList.add
+                setButtonDisabled('#stop', false); 
+                timer = setInterval(() => {
+                    var region = document.querySelector("#random p");
+                    region.innerHTML = randomInt(0, 30);
+                }, 3000);
+            }
+
+            document.querySelector('#stop').onclick = (event) => {
+                setButtonDisabled('#start', false); 
+                setButtonDisabled('#stop', true); 
+                clearInterval(timer);
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
