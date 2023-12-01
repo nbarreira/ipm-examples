@@ -14,7 +14,7 @@
     </head>
     <body>
         <nav>
-            <button aria-controls="menu" aria-label="menu">
+            <button aria-controls="menu" aria-label="menu" aria-haspopup="true">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul id="menu" aria-expanded="false">
@@ -34,7 +34,7 @@
             <p id="field1Error" class="error hidden">The email is incorrect</p>
 
             <label for="field2">Select an option:</label>
-            <select id="field2">
+            <select id="field2" aria-controls="field2Description">
                 <option value="0">Option 1</option>
                 <option value="1">Option 2</option>
                 <option value="2">Option 3</option>
@@ -44,7 +44,7 @@
                 Submit
             </button>
         </form>
-        <div id="modal" class="modal hidden" role="alert" aria-live="assertive" aria-relevant="additions" aria-label="submission result">
+        <div id="modal" class="modal hidden" role="alertdialog" aria-live="assertive" aria-relevant="additions" aria-label="submission result">
             <button class="close" aria-label="close">
                 <i class="fa-solid fa-close"></i>
             </button>
