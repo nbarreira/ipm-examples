@@ -35,9 +35,9 @@ $ python -m http.server        # python 3
 ```
 2. Abre un navegador y accede a la dirección y puerto del servidor (http://localhost:8000, por ejemplo).
 
-## AJAX
+## Asynchronous http requests
 
-Aplicación que muestra como usar fetch para realizar distintos tipos de peticiones AJAX a Dog API y a una API ad hoc implementada en python con el framework Flask.
+Aplicación que muestra como usar fetch para realizar distintos tipos de peticiones asíncronas http a Dog API y a una API ad hoc implementada en python con el framework Flask.
 
 ### Instrucciones
 
