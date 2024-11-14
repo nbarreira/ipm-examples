@@ -16,7 +16,6 @@ function do_login() {
 
     loginForm.style.display = 'none';
     progressBar.style.display = "none";
- 
 }
 
 function do_logout() {
@@ -57,7 +56,7 @@ document.querySelector('#a-get-1').addEventListener('click',event  => {
 
 /* POST request with FormData */
 document.querySelector('form#formpost').addEventListener('submit', event => {
-        document.querySelector('p#error-formpost').innerHTML = '';
+        document.querySelector('p#error-formpost').textContent = '';
 
         var username = document.querySelector('input#username-formpost').value;
         var password = document.querySelector('input#password-formpost').value;
@@ -75,14 +74,14 @@ document.querySelector('form#formpost').addEventListener('submit', event => {
             token = response['access_token'];
             do_login();
         })
-        .catch(error => document.querySelector('p#error-formpost').innerHTML = error.message); 
+        .catch(error => document.querySelector('p#error-formpost').textContent = error.message); 
 
         event.preventDefault();
 });
 
 /* POST request with JSON data */
 document.querySelector('form#jsonpost').addEventListener('submit', (event) => {
-        document.querySelector('p#error-jsonpost').innerHTML = '';
+        document.querySelector('p#error-jsonpost').textContent = '';
 
         var username = document.querySelector('input#username-jsonpost').value;
         var password = document.querySelector('input#password-jsonpost').value;
@@ -104,7 +103,7 @@ document.querySelector('form#jsonpost').addEventListener('submit', (event) => {
             token = response['access_token'];
             do_login();
         })
-        .catch(error => document.querySelector('p#error-jsonpost').innerHTML = error.message);
+        .catch(error => document.querySelector('p#error-jsonpost').textContent = error.message);
         
         event.preventDefault();
 });
@@ -121,7 +120,7 @@ document.querySelector('#btn-logout').addEventListener('click', event => {
 
     /* GET request with token authentication and JSON response */
 document.querySelector('#a-get-2').addEventListener('click', event => {
-        document.querySelector('p#response-ex2').innerHTML = '';
+        document.querySelector('p#response-ex2').textContent = '';
         document.querySelector('div#progress-ex2').style.display = "block";
 
         var headers = new Headers();
@@ -132,7 +131,7 @@ document.querySelector('#a-get-2').addEventListener('click', event => {
         .then(response => response.json())
         .then(response => {
             document.querySelector('div#progress-ex2').style.display = "none";
-            document.querySelector('p#response-ex2').innerHTML = 'Logged in as ' + response['logged_in_as'];
+            document.querySelector('p#response-ex2').textContent = 'Logged in as ' + response['logged_in_as'];
         })
         .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
 
