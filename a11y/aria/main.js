@@ -5,80 +5,85 @@ const descriptions = [
 ];
 
 var validEmail = false;
-
+const modal = document.querySelector("dialog#modal");
+const modalInfo = document.querySelector("dialog#modal div#info");
+const emailInput = document.querySelector("form input#field1");
+const emailInputError = document.querySelector("form p#field1Error");
+const selectInput = document.querySelector("form select#field2");
+const description = document.querySelector("form p#field2Description");
+const menuList = document.querySelector("nav ul");
+const menuListButton = document.querySelector("nav button");
+const menuListButtonIcon = document.querySelector("nav button i");
 
 function setDescription() {
-    let value = document.querySelector("form select#field2").value;
-    document.querySelector("form p#field2Description").innerText = descriptions[value]; 
+    let value = selectInput.value;
+    description.innerText = descriptions[value]; 
 }
 
 function validateEmail() {
-    let email = document.querySelector("form input#field1").value;
+    let email = emailInput.value;
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
 function resetForm() {
-    document.querySelector("form input#field1").value = "";
-    document.querySelector("form select#field2").selectedIndex = 0;
+    emailInput.value = "";
+    emailInputError.classList.add("hidden");
+    selectInput.selectedIndex = 0;
     setDescription();
 }
 
-document.querySelector("nav button").addEventListener("click", function (event) {
-    let menu = document.querySelector("nav ul");
-    menu.classList.toggle("open");
-    document.querySelector("nav button i").classList.toggle("fa-close");
+menuListButton.addEventListener("click", function (event) {
+    menuList.classList.toggle("open");
+    menuListButtonIcon.classList.toggle("fa-close");
     if (menu.classList.contains("open")) {
         menu.setAttribute("aria-expanded", "true");
-        document.querySelector("nav button").setAttribute("aria-label", "close menu");
+        menuListButton.setAttribute("aria-label", "close menu");
     } else {
         menu.setAttribute("aria-expanded", "false");
-        document.querySelector("nav button").setAttribute("aria-label", "open menu");
+        menuListButton.setAttribute("aria-label", "open menu");
     }
 });
 
 
-document.querySelector("form input#field1").addEventListener("change", function (event) {
+emailInput.addEventListener("change", function (event) {
     validEmail = validateEmail();
-    let field1 = document.querySelector("form input#field1");
-    let field1Error =  document.querySelector("form p#field1Error");
     if (validEmail) {
-        field1Error.classList.add("hidden");
-        field1.setAttribute("aria-invalid", false);
+        emailInputError.classList.add("hidden");
+        emailInput.setAttribute("aria-invalid", false);
 
     } else {
-        field1Error.classList.remove("hidden");
-        field1.setAttribute("aria-invalid", true);
+        emailInputError.classList.remove("hidden");
+        emailInput.setAttribute("aria-invalid", true);
     }
     
 });
 
 
-document.querySelector("form select#field2").addEventListener("change", function(event) {
+selectInput.addEventListener("change", function(event) {
     setDescription(); 
 });
 
 
 
 document.querySelector("form").addEventListener("submit", function(event) {
-    let modal = document.querySelector("div#modal");
-    let modalInfo = document.querySelector("div#modal div#info");
     if (validEmail) {
         modalInfo.innerText = "Data sent!";
         modal.classList.remove("modal-error");
-        resetForm();
+        //resetForm();
     } else {
         modalInfo.innerText = "Could not send the form due to errors: the email address is invalid";
         modal.classList.add("modal-error");
     }
-    modal.classList.remove("hidden");
-
-
+    modal.showModal();
     event.preventDefault();
 });
 
-document.querySelector(".close").addEventListener("click", function(event) {
-    document.querySelector("div#modal").classList.toggle("hidden");
+document.querySelector("dialog#modal .close").addEventListener("click", function(event) {
+    modal.close();
+    if (!modal.classList.contains("modal-error")) {
+        resetForm();
+    }
 });
 
 setDescription();

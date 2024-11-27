@@ -5,67 +5,76 @@ const descriptions = [
 ];
 
 var validEmail = false;
-
+const modal = document.querySelector("dialog#modal");
+const modalInfo = document.querySelector("dialog#modal div#info");
+const emailInput = document.querySelector("form input#field1");
+const emailInputError = document.querySelector("form p#field1Error");
+const selectInput = document.querySelector("form select#field2");
+const description = document.querySelector("form p#field2Description");
+const menuList = document.querySelector("nav ul");
+const menuListButton = document.querySelector("nav button");
+const menuListButtonIcon = document.querySelector("nav button i");
 
 function setDescription() {
-    let value = document.querySelector("form select#field2").value;
-    document.querySelector("form p#field2Description").innerText = descriptions[value]; 
+    let value = selectInput.value;
+    description.innerText = descriptions[value]; 
 }
 
 function validateEmail() {
-    let email = document.querySelector("form input#field1").value;
+    let email = emailInput.value;
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
 function resetForm() {
-    document.querySelector("form input#field1").value = "";
-    document.querySelector("form select#field2").selectedIndex = 0;
+    emailInput.value = "";
+    selectInput.selectedIndex = 0;
     setDescription();
 }
 
-document.querySelector("nav button").addEventListener("click", function (event) {
-    document.querySelector("nav ul").classList.toggle("open");
-    document.querySelector("nav button i").classList.toggle("fa-close");
+menuListButton.addEventListener("click", function (event) {
+    menuList.classList.toggle("open");
+    menuListButtonIcon.classList.toggle("fa-close");
 });
 
 
-document.querySelector("form input#field1").addEventListener("change", function (event) {
+emailInput.addEventListener("change", function (event) {
     validEmail = validateEmail();
      if (validEmail) {
-        document.querySelector("form p#field1Error").classList.add("hidden");
+        emailInputError.classList.add("hidden");
     } else {
-        document.querySelector("form p#field1Error").classList.remove("hidden");
+        emailInputError.classList.remove("hidden");
     }
     
 });
 
 
-document.querySelector("form select#field2").addEventListener("change", function(event) {
+selectInput.addEventListener("change", function(event) {
     setDescription(); 
 });
 
 
 
 document.querySelector("form").addEventListener("submit", function(event) {
-    let modal = document.querySelector("div#modal");
-    let modalInfo = document.querySelector("div#modal div#info");
     if (validEmail) {
         modalInfo.innerText = "Data sent!";
         modal.classList.remove("modal-error");
-        resetForm();
+        //resetForm();
     } else {
         modalInfo.innerText = "Could not send the form due to errors: the email address is invalid";
         modal.classList.add("modal-error");
     }
-    modal.classList.remove("hidden");
+    modal.showModal();
 
 
     event.preventDefault();
 });
 
-document.querySelector(".close").addEventListener("click", function(event) {
-    document.querySelector("div#modal").classList.toggle("hidden");
+document.querySelector("dialog#modal .close").addEventListener("click", function(event) {
+    modal.close();
+    if (!modal.classList.contains("modal-error")) {
+        resetForm();
+    }
 });
 
 setDescription();

@@ -93,7 +93,7 @@ form button {
     display: none;
 }
 
-div.modal {
+dialog.modal {
     background-color:  black;
     opacity: 0.7;
     color:  white;
@@ -106,30 +106,32 @@ div.modal {
     padding: 0 0.5em;
 }
 
-div.modal button.close {
+dialog.modal button.close {
     font-size:  2em;
-    line-height: 1em;
     border:  0;
-    font-size:  2em;
     width: 1.5em;
     color:  white;
     background-color: black;
     opacity: 0.7;
-
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-div.modal-error {
+dialog.modal-error {
     background-color:  darkred;
 }
 
-div.modal-error button.close {
+dialog.modal-error button.close {
     background-color:  darkred;
 }
 
 
-div.modal div {
+dialog.modal div {
     text-align:  left;
     margin:  0;
-    padding-bottom:  0.5em;
+    padding-top:  0.5em;
+    padding:  1em 2em 1em 1em;
+
 }
 
