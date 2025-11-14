@@ -10,58 +10,6 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/ipm.css" />
 
-    <script type="text/javascript">
-        function showPosition(position) {
-            document.querySelector("#longitude").value = position.coords.longitude;
-            document.querySelector("#latitude").value = position.coords.latitude;
-            document.querySelector("#accuracy").value = position.coords.accuracy;
-            document.querySelector("#altitude").value = position.coords.altitude;
-            document.querySelector("#altitudeAccuracy").value = position.coords.altitudeAccuracy;
-            document.querySelector("#heading").value = position.coords.heading;
-            document.querySelector("#speed").value = position.coords.speed;
-            document.querySelector("#timestamp").value = (new Date(position.timestamp)).toLocaleString();
-        }
-
-        function showError(error) {
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    document.querySelector("#error").innerHTML = "getCurrentPosition: Permision denied";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.querySelector("#error").innerHTML = "getCurrentPosition: Position unavaliable";
-                    break;
-                case error.TIMEOUT:
-                    document.querySelector("#error").innerHTML = "getCurrentPosition: Timeout";
-                    break;
-            }
-        }
-        var watchId = null;
-
-        function init() {
-            document.querySelector("#geolocateMe").onclick = function() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition, showError);
-                }
-            }
-            document.querySelector("#watchMe").onclick = function(e) {
-                if (navigator.geolocation) {
-                    if (watchId == null) {
-                        var options = {
-                            enableHighAccuracy: true,
-                            timeout: 10000
-                        }
-                        watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
-                        e.target.innerHTML = "Deja de seguirme";
-                    } else {
-                        navigator.geolocation.clearWatch(watchId);
-                        watchId = null;
-                        e.target.innerHTML = "Sígueme";
-                    }
-                }
-            }
-        }
-        window.onload = init;
-    </script>
 
 </head>
 
@@ -126,6 +74,58 @@
         </footer>
 
     </div>
+
+
+    <script type="text/javascript">
+        function showPosition(position) {
+            document.querySelector("#longitude").value = position.coords.longitude;
+            document.querySelector("#latitude").value = position.coords.latitude;
+            document.querySelector("#accuracy").value = position.coords.accuracy;
+            document.querySelector("#altitude").value = position.coords.altitude;
+            document.querySelector("#altitudeAccuracy").value = position.coords.altitudeAccuracy;
+            document.querySelector("#heading").value = position.coords.heading;
+            document.querySelector("#speed").value = position.coords.speed;
+            document.querySelector("#timestamp").value = (new Date(position.timestamp)).toLocaleString();
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.querySelector("#error").innerHTML = "getCurrentPosition: Permision denied";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.querySelector("#error").innerHTML = "getCurrentPosition: Position unavaliable";
+                    break;
+                case error.TIMEOUT:
+                    document.querySelector("#error").innerHTML = "getCurrentPosition: Timeout";
+                    break;
+            }
+        }
+        var watchId = null;
+
+        document.querySelector("#geolocateMe").addEventListener("click", event => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            }
+        });
+        document.querySelector("#watchMe").addEventListener("click", event => {
+            if (navigator.geolocation) {
+                if (watchId == null) {
+                    var options = {
+                        enableHighAccuracy: true,
+                        timeout: 10000
+                    }
+                    watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
+                    event.target.innerHTML = "Deja de seguirme";
+                } else {
+                    navigator.geolocation.clearWatch(watchId);
+                    watchId = null;
+                    event.target.innerHTML = "Sígueme";
+                }
+            }
+        });
+
+    </script>
 
 </body>
 
