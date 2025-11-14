@@ -66,7 +66,7 @@ document.querySelector('form#formpost').addEventListener('submit', event => {
         formData.append('username', username);
         formData.append('password', password);
 
-        fetch('http://localhost:5000/login',{
+        fetch('http://localhost:5050/login',{
             method: 'POST',
             body: formData
         })
@@ -92,7 +92,7 @@ document.querySelector('form#jsonpost').addEventListener('submit', (event) => {
             'password': password
         };
         
-        fetch('http://localhost:5000/login',{
+        fetch('http://localhost:5050/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -126,7 +126,7 @@ document.querySelector('#a-get-2').addEventListener('click', event => {
 
         var headers = new Headers();
         headers.append('Authorization', 'Bearer ' + token);
-        fetch('http://localhost:5000/protected',{
+        fetch('http://localhost:5050/protected',{
             headers: headers
         })
         .then(response => response.json())
@@ -146,14 +146,13 @@ document.querySelector('#a-get-3').addEventListener('click',event => {
         headers.append('pragma', 'no-cache');
         headers.append('cache-control', 'no-cache');
 
-        fetch('http://localhost:5000/image',{
+        fetch('http://localhost:5050/image',{
             headers: headers,
         })
         .then(response => response.blob())
         .then(data => {
-            var urlCreator = window.URL || window.webkitURL;
-            var imageUrl = urlCreator.createObjectURL(data);
-            document.querySelector("#image2").src = imageUrl;  
+            const url = URL.createObjectURL(data);
+            document.querySelector("#image2").src = url;  
          })
         .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
 
