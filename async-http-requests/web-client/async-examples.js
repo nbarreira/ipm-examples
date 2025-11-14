@@ -59,14 +59,14 @@ document.querySelector('#a-get-1').addEventListener('click',event  => {
 document.querySelector('form#formpost').addEventListener('submit', event => {
         document.querySelector('p#error-formpost').textContent = '';
 
-        var username = document.querySelector('input#username-formpost').value;
-        var password = document.querySelector('input#password-formpost').value;
+        const username = document.querySelector('input#username-formpost').value;
+        const password = document.querySelector('input#password-formpost').value;
 
-        var formData = new FormData();
+        let formData = new FormData();
         formData.append('username', username);
         formData.append('password', password);
 
-        fetch('http://localhost:5050/login',{
+        fetch('http://localhost:5000/login',{
             method: 'POST',
             body: formData
         })
@@ -84,15 +84,15 @@ document.querySelector('form#formpost').addEventListener('submit', event => {
 document.querySelector('form#jsonpost').addEventListener('submit', (event) => {
         document.querySelector('p#error-jsonpost').textContent = '';
 
-        var username = document.querySelector('input#username-jsonpost').value;
-        var password = document.querySelector('input#password-jsonpost').value;
+        const username = document.querySelector('input#username-jsonpost').value;
+        const password = document.querySelector('input#password-jsonpost').value;
 
-        var data = {
+        const data = {
             'username': username,
             'password': password
         };
         
-        fetch('http://localhost:5050/login',{
+        fetch('http://localhost:5000/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -124,9 +124,9 @@ document.querySelector('#a-get-2').addEventListener('click', event => {
         document.querySelector('p#response-ex2').textContent = '';
         document.querySelector('div#progress-ex2').style.display = "block";
 
-        var headers = new Headers();
+        let headers = new Headers();
         headers.append('Authorization', 'Bearer ' + token);
-        fetch('http://localhost:5050/protected',{
+        fetch('http://localhost:5000/protected',{
             headers: headers
         })
         .then(response => response.json())
@@ -142,11 +142,11 @@ document.querySelector('#a-get-2').addEventListener('click', event => {
 document.querySelector('#a-get-3').addEventListener('click',event => {
         console.log("fetching");
         document.querySelector("#image2").src = '';
-        var headers = new Headers();
+        let headers = new Headers();
         headers.append('pragma', 'no-cache');
         headers.append('cache-control', 'no-cache');
 
-        fetch('http://localhost:5050/image',{
+        fetch('http://localhost:5000/image',{
             headers: headers,
         })
         .then(response => response.blob())
