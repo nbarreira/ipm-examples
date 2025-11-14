@@ -29,6 +29,7 @@ function do_logout() {
 
 
 function handleErrors(response) {
+    console.log(response);
     if (response.status == 401) {
         throw Error('Bad username or password');
     }
@@ -48,7 +49,7 @@ do_logout();
 document.querySelector('#a-get-1').addEventListener('click',event  => {
         fetch("https://dog.ceo/api/breeds/image/random")
         .then(response => response.json())
-        .then(response => document.querySelector("#image1").src = response['message'])
+        .then(data => document.querySelector("#image1").src = data['message'])
         .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
 });
 
@@ -70,8 +71,8 @@ document.querySelector('form#formpost').addEventListener('submit', event => {
             body: formData
         })
         .then(handleErrors)
-        .then(response => {
-            token = response['access_token'];
+        .then(data => {
+            token = data['access_token'];
             do_login();
         })
         .catch(error => document.querySelector('p#error-formpost').textContent = error.message); 
@@ -99,8 +100,8 @@ document.querySelector('form#jsonpost').addEventListener('submit', (event) => {
             body: JSON.stringify(data)
         })
         .then(handleErrors)
-        .then(response => {
-            token = response['access_token'];
+        .then(data => {
+            token = data['access_token'];
             do_login();
         })
         .catch(error => document.querySelector('p#error-jsonpost').textContent = error.message);
@@ -129,9 +130,9 @@ document.querySelector('#a-get-2').addEventListener('click', event => {
             headers: headers
         })
         .then(response => response.json())
-        .then(response => {
+        .then(data => {
             document.querySelector('div#progress-ex2').style.display = "none";
-            document.querySelector('p#response-ex2').textContent = 'Logged in as ' + response['logged_in_as'];
+            document.querySelector('p#response-ex2').textContent = 'Logged in as ' + data['logged_in_as'];
         })
         .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
 
@@ -149,10 +150,9 @@ document.querySelector('#a-get-3').addEventListener('click',event => {
             headers: headers,
         })
         .then(response => response.blob())
-        .then(response => {
-            console.log(response);  
+        .then(data => {
             var urlCreator = window.URL || window.webkitURL;
-            var imageUrl = urlCreator.createObjectURL(response);
+            var imageUrl = urlCreator.createObjectURL(data);
             document.querySelector("#image2").src = imageUrl;  
          })
         .catch(error => M.toast({html: error.message})); // https://materializecss.com/toasts.html
