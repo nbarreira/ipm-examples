@@ -84,7 +84,7 @@
             }
             var timer = null;
 
-            document.querySelector('#start').onclick = (event) => {
+            document.querySelector('#start').addEventListener("click", (event) => {
                 setButtonDisabled('#start', true); 
                 event.target.classList.add
                 setButtonDisabled('#stop', false); 
@@ -92,13 +92,13 @@
                     var region = document.querySelector("#random p");
                     region.innerHTML = randomInt(0, 30);
                 }, 3000);
-            }
+            });
 
-            document.querySelector('#stop').onclick = (event) => {
+            document.querySelector('#stop').addEventListener("click", (event) => {
                 setButtonDisabled('#start', false); 
                 setButtonDisabled('#stop', true); 
                 clearInterval(timer);
-            }
+            });
 
         </script>
     </div>

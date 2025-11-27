@@ -29,8 +29,7 @@ nav button {
     color:  white;
 }
 
-nav div {
-}
+
 
 nav ul {
     display: none;
@@ -90,7 +89,7 @@ form button {
     padding: 0.2em 0.4em;
 }
 .hidden {
-    display: none;
+    visibility: hidden;
 }
 
 dialog.modal {
@@ -122,6 +121,11 @@ dialog.modal-error {
     background-color:  darkred;
 }
 
+dialog.modal span.close:hover,
+dialog.model span.close:focus {
+    cursor:  pointer;
+}
+
 dialog.modal-error button.close {
     background-color:  darkred;
 }
@@ -130,8 +134,6 @@ dialog.modal-error button.close {
 dialog.modal div {
     text-align:  left;
     margin:  0;
-    padding-top:  0.5em;
     padding:  1em 2em 1em 1em;
-
 }
 

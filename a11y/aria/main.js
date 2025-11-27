@@ -46,7 +46,7 @@ menuListButton.addEventListener("click", function (event) {
 });
 
 
-emailInput.addEventListener("change", function (event) {
+emailInput.addEventListener("input", function (event) {
     validEmail = validateEmail();
     if (validEmail) {
         emailInputError.classList.add("hidden");
