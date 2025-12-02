@@ -37,11 +37,13 @@ menuListButton.addEventListener("click", function (event) {
     menuList.classList.toggle("open");
     menuListButtonIcon.classList.toggle("fa-close");
     if (menu.classList.contains("open")) {
-        menu.setAttribute("aria-expanded", "true");
+        menuListButton.setAttribute("aria-expanded", "true");
         menuListButton.setAttribute("aria-label", "close menu");
+        menu.setAttribute("aria-hidden", "false");
     } else {
-        menu.setAttribute("aria-expanded", "false");
+        menuListButton.setAttribute("aria-expanded", "false");
         menuListButton.setAttribute("aria-label", "open menu");
+        menu.setAttribure("aria-hidden", "true")
     }
 });
 
