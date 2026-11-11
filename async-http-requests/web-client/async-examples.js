@@ -90,7 +90,7 @@ document.querySelector('form#formpost').addEventListener('submit', async (event)
             method: 'POST',
             body: formData
         });
-        var data = await processResponse(response);
+        const data = await processResponse(response);
         token = data['access_token'];
         do_login();
     } catch (error) {
@@ -121,7 +121,7 @@ document.querySelector('form#jsonpost').addEventListener('submit', async (event)
             },
             body: JSON.stringify(loginData)
         });
-        var data = await processResponse(response);
+        const data = await processResponse(response);
         token = data['access_token'];
         do_login();
     } catch (error) {
