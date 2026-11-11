@@ -17,7 +17,6 @@ function do_login() {
     exampleGet3.style.display = 'block';
 
     loginForm.style.display = 'none';
-    progressBar.style.display = "none";
 }
 
 function do_logout() {
@@ -25,15 +24,17 @@ function do_logout() {
     exampleGet1.style.display = 'block';
     exampleGet2.style.display = 'none';
     exampleGet3.style.display = 'none';
-
+    
     loginForm.style.display = 'block';
 }
 
 
 async function processResponse(response) {
     console.log(response);
-    if (response.status == 401) {
-        throw Error('Bad username or password');
+    if (!response.ok) {
+        if (response.status == 401) {
+            throw Error('Bad username or password');
+        }
     }
     const data = await response.json();
     return data;
@@ -90,6 +91,7 @@ document.querySelector('form#formpost').addEventListener('submit', async (event)
             method: 'POST',
             body: formData
         });
+
         const data = await processResponse(response);
         token = data['access_token'];
         do_login();
@@ -142,7 +144,7 @@ document.querySelector('#btn-logout').addEventListener('click', event => {
 /* GET request with token authentication and JSON response */
 document.querySelector('#a-get-2').addEventListener('click', async event => {
     document.querySelector('p#response-ex2').textContent = '';
-    document.querySelector('div#progress-ex2').style.display = "block";
+    progressBar.classList.remove("hide");
 
     let headers = new Headers();
     headers.append('Authorization', 'Bearer ' + token);
@@ -150,14 +152,18 @@ document.querySelector('#a-get-2').addEventListener('click', async event => {
         const response = await fetch('http://127.0.0.1:5000/protected', {
             headers: headers
         });
+        if (!response.ok) {
+            throw Error('Server error');
+        }
         const data = await response.json();
-        document.querySelector('div#progress-ex2').style.display = "none";
         document.querySelector('p#response-ex2').textContent = 'Logged in as ' + data['logged_in_as'];
 
     } catch (error) {
         M.toast({ html: error.message });
-    } // https://materializecss.com/toasts.html
-
+    } finally {
+        console.log("finally");
+        progressBar.classList.add("hide");
+    }
 });
 
 /* GET request and Blob response */
@@ -167,6 +173,9 @@ document.querySelector('#a-get-3').addEventListener('click', async event => {
         const response = await fetch('http://127.0.0.1:5000/image', {
             cache: "no-store",
         });
+        if (!response.ok) {
+            throw Error('Server error');
+        }
         const data = await response.blob();
         currentUrl = URL.createObjectURL(data);
         document.querySelector("#image2").src = currentUrl;

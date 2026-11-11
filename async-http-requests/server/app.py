@@ -13,7 +13,7 @@ from flask_jwt_extended import (
 )
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 
 # Setup the Flask-JWT-Extended extension
@@ -69,4 +69,4 @@ def image():
         download_name=imagename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
