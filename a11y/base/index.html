@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>IPM A11y Example</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+<head>
+    <title>IPM A11y Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <button type="button">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <nav>
-            <button>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul>
-                <li><a>Menu 1</a></li>
-                <li><a>Menu 2</a></li>
-                <li><a>Menu 3</a></li>
-                <li><a>Menu 4</a></li>
+            <ul hidden>
+                <li><a href="#">Menu 1</a></li>
+                <li><a href="#">Menu 2</a></li>
+                <li><a href="#">Menu 3</a></li>
+                <li><a href="#">Menu 4</a></li>
             </ul>
-            <h1>A11y example</h1>
         </nav>
-        <section>
+        <h1>A11y example</h1>
+    </header>
+    <main>
         <h2>Form</h2>
 
         <form>
             <label for="field1">Email</label>
-            <input type="text" id="field1" required/>
-            <p id="field1Error" class="error hidden">The email is incorrect</p>
+            <input type="text" id="field1" required />
+            <p id="field1Error" class="error" hidden>The email is incorrect</p>
 
             <label for="field2">Select an option:</label>
             <select id="field2">
@@ -45,14 +51,15 @@
             </button>
         </form>
         <dialog id="modal" class="modal">
-            <button class="close">
+            <button type="button" class="close">
                 <i class="fa-solid fa-close"></i>
             </button>
             <div id="info"></div>
         </dialog>
-        </section>
+    </main>
 
-        <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 
-    </body>
+</body>
+
 </html>

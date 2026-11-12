@@ -12,8 +12,8 @@ const emailInputError = document.querySelector("form p#field1Error");
 const selectInput = document.querySelector("form select#field2");
 const description = document.querySelector("form p#field2Description");
 const menuList = document.querySelector("nav ul");
-const menuListButton = document.querySelector("nav button");
-const menuListButtonIcon = document.querySelector("nav button i");
+const menuListButton = document.querySelector("header button");
+const menuListButtonIcon = document.querySelector("header button i");
 
 function setDescription() {
     let value = selectInput.value;
@@ -33,19 +33,21 @@ function resetForm() {
 }
 
 menuListButton.addEventListener("click", function (event) {
-    menuList.classList.toggle("open");
-    menuListButtonIcon.classList.toggle("fa-close");
+    const closed = menuList.hidden;
+    menuList.hidden = !closed;
+    console.log("tras cambio closed=", menuList.hidden);
+    menuListButtonIcon.classList.toggle("fa-bars", !closed);
+    menuListButtonIcon.classList.toggle("fa-xmark", closed);
 });
 
 
-emailInput.addEventListener("input", function (event) {
+emailInput.addEventListener("blur", function (event) {
     validEmail = validateEmail();
      if (validEmail) {
-        emailInputError.classList.add("hidden");
+        emailInputError.hidden = true;
     } else {
-        emailInputError.classList.remove("hidden");
-    }
-    
+        emailInputError.hidden = false;
+    }    
 });
 
 

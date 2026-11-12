@@ -12,8 +12,8 @@ const emailInputError = document.querySelector("form p#field1Error");
 const selectInput = document.querySelector("form select#field2");
 const description = document.querySelector("form p#field2Description");
 const menuList = document.querySelector("nav ul");
-const menuListButton = document.querySelector("nav button");
-const menuListButtonIcon = document.querySelector("nav button i");
+const menuListButton = document.querySelector("header button");
+const menuListButtonIcon = document.querySelector("header button i");
 
 function setDescription() {
     let value = selectInput.value;
@@ -33,42 +33,37 @@ function resetForm() {
     setDescription();
 }
 
-menuListButton.addEventListener("click", function (event) {
-    menuList.classList.toggle("open");
-    menuListButtonIcon.classList.toggle("fa-close");
-    if (menu.classList.contains("open")) {
-        menuListButton.setAttribute("aria-expanded", "true");
-        menuListButton.setAttribute("aria-label", "close menu");
-        menu.setAttribute("aria-hidden", "false");
-    } else {
-        menuListButton.setAttribute("aria-expanded", "false");
-        menuListButton.setAttribute("aria-label", "open menu");
-        menu.setAttribure("aria-hidden", "true")
-    }
+menuListButton.addEventListener("click",  () => {
+    const closed = menuList.hidden;
+    menuList.hidden = !closed;
+    console.log("tras cambio closed=", menuList.hidden);
+    menuListButtonIcon.classList.toggle("fa-bars", !closed);
+    menuListButtonIcon.classList.toggle("fa-xmark", closed);    
+    menuListButton.setAttribute("aria-expanded", String(closed));
 });
 
 
-emailInput.addEventListener("input", function (event) {
+emailInput.addEventListener("blur", () => {
     validEmail = validateEmail();
     if (validEmail) {
-        emailInputError.classList.add("hidden");
+        emailInputError.hidden = true;
         emailInput.setAttribute("aria-invalid", false);
 
     } else {
-        emailInputError.classList.remove("hidden");
+        emailInputError.hidden = false;
         emailInput.setAttribute("aria-invalid", true);
     }
     
 });
 
 
-selectInput.addEventListener("change", function(event) {
+selectInput.addEventListener("change", () => {
     setDescription(); 
 });
 
 
 
-document.querySelector("form").addEventListener("submit", function(event) {
+document.querySelector("form").addEventListener("submit", (event) => {
     if (validEmail) {
         modalInfo.innerText = "Data sent!";
         modal.classList.remove("modal-error");
@@ -81,7 +76,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 });
 
-document.querySelector("dialog#modal .close").addEventListener("click", function(event) {
+document.querySelector("dialog#modal .close").addEventListener("click", () => {
     modal.close();
     if (!modal.classList.contains("modal-error")) {
         resetForm();

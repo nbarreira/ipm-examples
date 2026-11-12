@@ -1,8 +1,7 @@
 const loginForm = document.querySelector('#login-form')
 const logoutForm = document.querySelector('#logout-form');
-const exampleGet1 = document.querySelector('#example-get-1');
-const exampleGet2 = document.querySelector('#example-get-2');
-const exampleGet3 = document.querySelector('#example-get-3');
+const page1 = document.querySelector('#page-1');
+const page2 = document.querySelector('#page-2');
 const progressDog = document.querySelector('div#progress-dog');
 const progressBar = document.querySelector('div#progress-ex2');
 
@@ -11,21 +10,13 @@ let currentUrl = null;
 
 
 function do_login() {
-    logoutForm.style.display = 'block';
-    exampleGet1.style.display = 'none';
-    exampleGet2.style.display = 'block';
-    exampleGet3.style.display = 'block';
-
-    loginForm.style.display = 'none';
+    page1.classList.add("hide");
+    page2.classList.remove("hide")
 }
 
 function do_logout() {
-    logoutForm.style.display = 'none';
-    exampleGet1.style.display = 'block';
-    exampleGet2.style.display = 'none';
-    exampleGet3.style.display = 'none';
-    
-    loginForm.style.display = 'block';
+    page1.classList.remove("hide");
+    page2.classList.add("hide")
 }
 
 
@@ -62,11 +53,8 @@ async function showDog() {
 }
 
 
-/* Hide elements */
-do_logout();
 
 /* Assign callbacks */
-
 
 /* GET request and JSON response */
 document.querySelector('#a-get-1').addEventListener('click', async event => showDog());

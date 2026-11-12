@@ -8,20 +8,20 @@ input, select {
     font-family: 'Poppins', sans-serif;
 }
 
-nav {
+header {
     width:  100%;
     background-color: slategray;
     display: flex;
     align-content: stretch;
 }
 
-nav h1 {
+header h1 {
     margin: 0;
     padding: 0;
     color:  white;
 }
 
-nav button {
+header button {
     border:  0;
     font-size:  2em;
     width: 1.5em;
@@ -29,13 +29,19 @@ nav button {
     color:  white;
 }
 
+nav {
+    position: fixed;
+    top: 2em;
+    left: 0;
+}
 
 
 nav ul {
-    display: none;
     list-style: none;
     background-color:  white;
     padding:  0;
+    width:  200px;
+
 }
 
 nav ul li {
@@ -43,18 +49,23 @@ nav ul li {
     padding: 0.5em 0.25em;
     border:  solid 1px gray;
     border-top: 0;
-
 }
 
-nav ul.open {
-    display: block;
-    position: fixed;
+nav ul li a {
+    color:  gray;
+    font-weight: bold;
+    text-decoration: none
+}
+
+
+
+nav ul:visible {
+    position: relative;
     margin-top:  2.4em;
-    width:  200px;
     background-color:  white;
 }
 
-section {
+main {
     margin:  0 2.5em;
 }
 
