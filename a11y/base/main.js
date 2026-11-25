@@ -1,7 +1,7 @@
 const descriptions = [
-    "Lorem ipsum dolor sit amet.",
-    "Ut at iaculis neque. In hac.",
-    "Vestibulum elementum diam lectus, quis finibus ligula ultrices."
+    "The quick brown fox jumps over the lazy dog near the quiet riverbanks.",
+    "Every element on this page is structured to showcase clean spacing, balanced margins, and readable font weights.",
+    "Once the final copy is ready, this temporary block can be replaced seamlessly with your actual content."
 ];
 
 var validEmail = false;

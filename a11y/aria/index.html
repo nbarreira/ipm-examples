@@ -38,8 +38,10 @@
         <form id="form">
             <label for="field1">Email</label>
             <input type="text" id="field1" required aria-required="true" aria-invalid="false"
-                aria-errormessage="field1Error" />
+                aria-describedby="desc" aria-errormessage="field1Error" />
+            <p id="desc">The email is mandatory and should contain an @</p>
             <p id="field1Error" class="error" role="alert" hidden>The email is incorrect</p>
+
 
             <label for="field2">Select an option:</label>
             <select id="field2" aria-controls="field2Description">
